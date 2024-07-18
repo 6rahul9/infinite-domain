@@ -47,6 +47,25 @@ export default class stats {
             queryResultAvailable = this.render.context.getQueryParamater(this.render.query, this.render.context.QUERY_ESULT_AVAILABLE)
 
             const disjoint = this.render.context.getParamater(this.render.extension.GPU_DISJOINT_EXT)
+
+            if (queryResultAvailable && disjoint){
+                const elapsedNanos =  this.render.context.getQueryParamater(this.render.query, this.render.context.QUERY_RESULT)
+                const panelValue = Math.min(elapsedNanos / 1000 / 1000, this.max)
+
+                if(panelValue === this.max && this.ignoreMaxed){
+
+                }
+                else{
+                    this.render.panel.update(panelValue, this.max)
+                }
+            }
         }
+
+        //if query reult availbale or result yet 
+        if(queryResultAvailable || !this.render.query){
+            //create new query 
+            this.queryCreated = true 
+        }
+
     }
 }
