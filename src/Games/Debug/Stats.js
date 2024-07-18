@@ -34,6 +34,19 @@ export default class stats {
     }
 
     beforeRender(){
-        
+        if(!this.active){
+            return
+        }
+
+        //setup
+        this.queryCreated = false
+        let queryResultAvailable = false
+
+        //test if query result availbale 
+        if(this.render.query){
+            queryResultAvailable = this.render.context.getQueryParamater(this.render.query, this.render.context.QUERY_ESULT_AVAILABLE)
+
+            const disjoint = this.render.context.getParamater(this.render.extension.GPU_DISJOINT_EXT)
+        }
     }
 }
