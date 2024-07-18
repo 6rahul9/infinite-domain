@@ -65,7 +65,30 @@ export default class stats {
         if(queryResultAvailable || !this.render.query){
             //create new query 
             this.queryCreated = true 
+            this.render.query = this.render.context.createQuery()
+            this.render.context.beinQuery(this.render.extension.TIME_ELAPSED_EXT, this.render.query)
+        }
+    }
+
+    afterRender(){
+        if(!this.active){
+            return
         }
 
+        //end the query result will be available later
+        if(this.queryCreated){
+            this.render.context.endQuery(this.render.extension.TIME_ELAPSED_EXT)
+        }
+    }
+
+    update(){
+        if(!this.active){
+            return
+        }
+        this.instance.update()
+    }
+
+    destroy(){
+        this.deactivate()
     }
 }
