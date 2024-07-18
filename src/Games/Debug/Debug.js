@@ -8,5 +8,22 @@ export default class Debug{
         return Debug.instance
     }
 
-    constructror
+    constructor(){
+        if(Debug.instance)
+            return Debug.instance
+        Debug.instance = this
+        this.active = false
+        if(location.hash === '#debug')
+        {
+            this.activate()
+        }
+    }
+
+    activate(){
+        if(this.active)
+            return
+        this.active = true
+        this.UI= new UI()
+        this.stats = new Stats()
+    }
 }
