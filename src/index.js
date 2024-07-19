@@ -1,6 +1,5 @@
 import Game from '@/Game.js'
 
 const game = new game()
-if(game.view){
+if(game.view)
     document.querySelector('.game').append(game.view.renderer.instance.domElement)
-}
