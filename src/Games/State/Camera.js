@@ -39,7 +39,33 @@ export default class Camera{
                 this.fly.deactivate()
                 this.thirdperson.activate()
             }
-            
         })
+        this.setDebug()
+    }
+
+    update(){
+        this.thirdPerson.update()
+        this.fly.update()
+        
+        if(this.mode === Camera.MODE_THIRDPERSON)
+        {
+            vec3.copy(this.position, this.thirdPerson.position)
+            quat2.copy(this.quaternion, this.thirdPerson.quaternion)
+        }
+
+        else if (this.mode === Camera.MODE_FLY){
+            vec3.copy(this.position, this.fly.position)
+            quat2.copy(this.quaternion, this.fly.quaternion)
+        }
+    }
+    setDebug(){
+        const debug = this.game.debug
+        if(!debug.active){
+            return
+            const folder = debug.uigetFolder('state/player/view')
+
+            folder
+            .add()
+        }
     }
 }
