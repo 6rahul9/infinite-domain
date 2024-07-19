@@ -1,5 +1,6 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import './index.css'
+import Game from '@/Game.js'
 
-createApp(App).mount('#app')
+const game = new game()
+if(game.view){
+    document.querySelector('.game').append(game.view.renderer.instance.domElement)
+}
