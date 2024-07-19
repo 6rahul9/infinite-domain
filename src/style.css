@@ -66,4 +66,30 @@
 .ui .element{
   display: flex;
   align-items: center;
+  margin-right: 10px;
+}
+
+.ui .keys{
+  --key-size: 15px;
+  --key-margin: 2px;
+  font-size: 0;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.ui .keys.is-arrows{
+  position: relative;
+}
+.ui .keys.is-arrows .key:last-child{
+  position: absolute;
+  bottom: calc(var(--key-size) + var(--key-margin));
+}
+
+.ui .key{
+  display: inline-flex;
+  align-items: center;
+  width: var(--key-size);
+  width: var(--key-margin);
+  border: 1px solid #ffffff;
+  font-size: 9px;
 }
