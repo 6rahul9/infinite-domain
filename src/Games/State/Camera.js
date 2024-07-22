@@ -65,7 +65,16 @@ export default class Camera{
             const folder = debug.uigetFolder('state/player/view')
 
             folder
-            .add()
+            .add(this, 'mode',
+                {
+                    'MODE_THIRDPERSON' : Camera.MODE_THIRDPERSON,
+                    MODE_FLY:Camera.MODE_FLY
+                }
+            )
+            
+            .onChange(() => {
+                
+            })
         }
     }
 }
