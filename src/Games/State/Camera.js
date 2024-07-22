@@ -73,7 +73,15 @@ export default class Camera{
             )
             
             .onChange(() => {
-                
+                if(this.mode === Camera.MODE_THIRDPERSON){
+                    this.fly.deactivate()
+                    this.thirdperson.activate()
+                }
+
+                else if (this.mode === Camera.MODE_FLY){
+                    this.fly.activate(this.position, this.quaternion)
+                    this.thirdperson.deactivate()
+                }
             })
         }
     }
