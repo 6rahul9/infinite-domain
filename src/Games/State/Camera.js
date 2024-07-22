@@ -60,7 +60,7 @@ export default class Camera{
     }
     setDebug(){
         const debug = this.game.debug
-        if(!debug.active){
+        if(!debug.active)
             return
             const folder = debug.uigetFolder('state/player/view')
 
@@ -83,6 +83,6 @@ export default class Camera{
                     this.thirdperson.deactivate()
                 }
             })
-        }
+        
     }
 }
