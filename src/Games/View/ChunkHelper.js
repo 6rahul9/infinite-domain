@@ -90,5 +90,19 @@ export default class ChunkHelper{
             return
         if(!this.chunkState.neighbour.size === 0)
             return
+        this.neighbousIds = new PoinTextHelper({ charMax : 4})
+        this.neighbousIds.material.depthTest = false
+        this.neighbousIds.material.onBeforeRender = () => {}
+        this.neighbousIds.material.onBuild = () => {}
+        this.group.add(this.neighbousIds)
+
+        const nChunk = this.chunkSate.neighbour.get('n')
+        const eChunk = this.chunkSate.neighbour.get('e')
+        const sChunk = this.chunkSate.neighbour.get('s')
+        const wChunk = this.chunkSate.neighbour.get('w')
+
+         const size = (t )
     }
+
+
 }
