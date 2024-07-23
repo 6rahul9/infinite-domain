@@ -1,15 +1,23 @@
 {
-  "name": "infinite domain",
+  "name": "infinite-domain",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
   "dependencies": {
+    "events": "^3.3.0",
+    "gl-matrix": "^3.4.3",
+    "index.js": "^0.0.3",
+    "lil-gui": "^0.19.2",
+    "seedrandom": "^3.0.5",
+    "simplex-noise": "^4.0.2",
+    "stats-js": "^1.0.1",
+    "three": "^0.166.1",
     "vue": "^3.0.4"
   },
   "devDependencies": {
-    "vite": "^1.0.0-rc.13",
-    "@vue/compiler-sfc": "^3.0.4"
+    "@vue/compiler-sfc": "^3.0.4",
+    "vite": "^1.0.0-rc.13"
   }
 }
