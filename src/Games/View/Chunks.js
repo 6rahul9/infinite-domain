@@ -1,5 +1,5 @@
 import State from '@State/State.js'
-import Chunk from './Chunk'
+import Chunk from './Chunk.js'
 
 export default class chunks
 {
@@ -16,6 +16,6 @@ export default class chunks
     }
 
     update(){
-        
+
     }
 }
