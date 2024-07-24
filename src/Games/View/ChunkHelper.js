@@ -103,7 +103,54 @@ export default class ChunkHelper{
 
          const size = (this.state.chunk.maxDepth - this.chunkSate.depth +1) * 6
          const y = (this.state.chunk.maxDepth - this.chunkSate.depth) * 10
+
+         cosnt nLabel = nChunk ? nChunk.id : ''
+         this.neighbousIds.display({
+            text:nLabel, 
+            color:'#00bfff',
+            size = size,
+            positio = new THREE.Vector3(0, y, - this.chunkSate.quaterSize )
+         })
+
+
+         cosnt eLabel = eChunk ? eChunk.id : ''
+         this.neighbousIds.display({
+            text: eLabel, 
+            color:'#00bfff',
+            size = size,
+            positio = new THREE.Vector3(this.chunkSate.quaterSize, 0, y)
+         })
+
+         cosnt sLabel = sChunk ? sChunk.id : ''
+         this.neighbousIds.display({
+            text: sLabel, 
+            color:'#00bfff',
+            size = size,
+            positio = new THREE.Vector3(0, y, this.chunkSate.quaterSize)
+         })
+
+         cosnt wLabel = wChunk ? wChunk.id : ''
+         this.neighbousIds.display({
+            text: wLabel, 
+            color:'#00bfff',
+            size = size,
+            positio = new THREE.Vector3( - this.chunkSate.quaterSize, 0, y)
+         })
     }
 
+    destroyNeighboursIds(){
+        if(!this.neighbousIds)
+            return
+        this.neighbousIds.geometry.dispose()
+        this.neighbousIds.material.dispose()
+        this.group.remove(this.neighbousIds)
+    }
+
+    destroy(){
+        this.destroyGroup()
+        this.destroyArea()
+        this.destroyId()
+        this.destroyNeighboursIds()
+    }
 
 }
