@@ -90,11 +90,11 @@ export default class ChunkHelper{
             return
         if(!this.chunkState.neighbour.size === 0)
             return
-        this.neighbousIds = new PoinTextHelper({ charMax : 4})
-        this.neighbousIds.material.depthTest = false
-        this.neighbousIds.material.onBeforeRender = () => {}
-        this.neighbousIds.material.onBuild = () => {}
-        this.group.add(this.neighbousIds)
+        this.neighboursIds = new PoinTextHelper({ charMax : 4})
+        this.neighboursIds.material.depthTest = false
+        this.neighboursIds.material.onBeforeRender = () => {}
+        this.neighboursIds.material.onBuild = () => {}
+        this.group.add(this.neighboursIds)
 
         const nChunk = this.chunkSate.neighbour.get('n')
         const eChunk = this.chunkSate.neighbour.get('e')
@@ -104,46 +104,61 @@ export default class ChunkHelper{
          const size = (this.state.chunk.maxDepth - this.chunkSate.depth +1) * 6
          const y = (this.state.chunk.maxDepth - this.chunkSate.depth) * 10
 
-         cosnt nLabel = nChunk ? nChunk.id : ''
-         this.neighbousIds.display({
-            text:nLabel, 
-            color:'#00bfff',
-            size = size,
-            positio = new THREE.Vector3(0, y, - this.chunkSate.quaterSize )
-         })
+         const nLabel = nChunk ? nChunk.id : ''
+        this.neighboursIds.display({
+            text: nLabel,
+            color: '#00bfff',
+            size: size,
+            position: new THREE.Vector3(
+                0,
+                y,
+                - this.chunkState.quarterSize
+            )
+        })
 
-
-         cosnt eLabel = eChunk ? eChunk.id : ''
-         this.neighbousIds.display({
-            text: eLabel, 
-            color:'#00bfff',
-            size = size,
-            positio = new THREE.Vector3(this.chunkSate.quaterSize, 0, y)
-         })
-
-         cosnt sLabel = sChunk ? sChunk.id : ''
-         this.neighbousIds.display({
-            text: sLabel, 
-            color:'#00bfff',
-            size = size,
-            positio = new THREE.Vector3(0, y, this.chunkSate.quaterSize)
-         })
-
-         cosnt wLabel = wChunk ? wChunk.id : ''
-         this.neighbousIds.display({
-            text: wLabel, 
-            color:'#00bfff',
-            size = size,
-            positio = new THREE.Vector3( - this.chunkSate.quaterSize, 0, y)
-         })
+        const eLabel = eChunk ? eChunk.id : ''
+        this.neighboursIds.display({
+            text: eLabel,
+            color: '#00bfff',
+            size: size,
+            position: new THREE.Vector3(
+                this.chunkState.quarterSize,
+                y,
+                0
+            )
+        })
+        
+        const sLabel = sChunk ? sChunk.id : ''
+        this.neighboursIds.display({
+            text: sLabel,
+            color: '#00bfff',
+            size: size,
+            position: new THREE.Vector3(
+                0,
+                y,
+                this.chunkSate.quarterSize
+            )
+        })
+        
+        const wLabel = wChunk ? wChunk.id : ''
+        this.neighboursIds.display({
+            text: wLabel,
+            color: '#00bfff',
+            size: size,
+            position: new THREE.Vector3(
+                - this.chunkState.quarterSize,
+                y,
+                0
+            )
+        })
     }
 
     destroyNeighboursIds(){
-        if(!this.neighbousIds)
+        if(!this.neighboursIds)
             return
-        this.neighbousIds.geometry.dispose()
-        this.neighbousIds.material.dispose()
-        this.group.remove(this.neighbousIds)
+        this.neighboursIds.geometry.dispose()
+        this.neighboursIds.material.dispose()
+        this.group.remove(this.neighboursIds)
     }
 
     destroy(){
