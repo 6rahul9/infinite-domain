@@ -101,7 +101,8 @@ export default class ChunkHelper{
         const sChunk = this.chunkSate.neighbour.get('s')
         const wChunk = this.chunkSate.neighbour.get('w')
 
-         const size = (t )
+         const size = (this.state.chunk.maxDepth - this.chunkSate.depth +1) * 6
+         const y = (this.state.chunk.maxDepth - this.chunkSate.depth) * 10
     }
 
 
