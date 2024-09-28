@@ -1,11 +1,14 @@
 {
   "name": "infinite-domain",
   "version": "0.0.0",
+  "type": "module",
+  "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
   "dependencies": {
+    "@jniac/three-point-text-helper": "^1.0.10",
     "events": "^3.3.0",
     "gl-matrix": "^3.4.3",
     "index.js": "^0.0.3",
@@ -18,7 +21,7 @@
     "vue": "^3.0.4"
   },
   "devDependencies": {
-    "@vue/compiler-sfc": "^3.0.4",
-    "vite": "^1.0.0-rc.13"
+    "@vue/compiler-sfc": "^3.5.10",
+    "vite": "^5.4.8"
   }
 }
