@@ -1,95 +1,116 @@
 *
 {
-  box-sizing: border-box;
-}
-.game{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100%;
-  touch-action: none;
-}
-.ui{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  color: #ffffff;
-  pointer-events: none;
-  user-select: none;
+    box-sizing: border-box;
 }
 
-.ui a{
-  pointer-events: auto;
+.game
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    touch-action: none;
 }
 
-.ui .mobile-warning{
-  display: none;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 200px;
+.ui
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #ffffff;
+    pointer-events: none;
+    user-select: none;
 }
 
-@media (orientation: portrait){
-  .ui .mobile-warning{
+.ui a
+{
+    pointer-events: auto;
+}
+
+.ui .mobile-warning
+{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+}
+
+@media (orientation: portrait)
+{
+    .ui .mobile-warning
+    {
+        display: flex;
+    }
+}
+
+.ui .controls
+{
     display: flex;
-  }
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px;
 }
 
-.ui .control{
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 8px;
+.ui a
+{
+    color: inherit;
 }
 
-.ui a{
-  color: inherit;
+.ui .group
+{
+    display: flex;
 }
 
-.ui .group{
-  display: flex;
+.ui .element
+{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
 }
 
-.ui .element{
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
+.ui .keys
+{
+    --key-size: 15px;
+    --key-margin: 2px;
+
+    font-size: 0;
+    margin-right: 2px;
+    white-space: nowrap;
 }
 
-.ui .keys{
-  --key-size: 15px;
-  --key-margin: 2px;
-  font-size: 0;
-  margin-right: 2px;
-  white-space: nowrap;
+.ui .keys.is-arrows
+{
+    position: relative;
 }
 
-.ui .keys.is-arrows{
-  position: relative;
-}
-.ui .keys.is-arrows .key:last-child{
-  position: absolute;
-  bottom: calc(var(--key-size) + var(--key-margin));
+.ui .keys.is-arrows .key:last-child
+{
+    position: absolute;
+    bottom: calc(100% + var(--key-margin));
+    left: calc(var(--key-size) + var(--key-margin));
 }
 
-.ui .key{
-  display: inline-flex;
-  align-items: center;
-  width: var(--key-size);
-  width: var(--key-margin);
-  border: 1px solid #ffffff;
-  font-size: 9px;
+.ui .key
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--key-size);
+    height: var(--key-size);
+    margin-right: var(--key-margin);
+    border: 1px solid #ffffff;
+    font-size: 9px;
 }
