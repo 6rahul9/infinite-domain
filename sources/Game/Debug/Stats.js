@@ -1,4 +1,6 @@
-import StatsJs from 'Stats.js'
+// import StatsJs from 'stats.js'
+import StatsJs from '@sources/Game/Debug/Stats.js'; // This should resolve correctly if the alias is updated
+
 
 export default class Stats
 {
