@@ -1,4 +1,4 @@
-import StatsJs from 'stats.js'
+import StatsJs from 'Stats.js'
 
 export default class Stats
 {
